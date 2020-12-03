@@ -1,3 +1,5 @@
+
+/* ログインページ始まり */
 body,
 .signin {
     background-color: #d3d3d3;
@@ -170,3 +172,5 @@ a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.2);
 }
+
+/* ログインページ終わり */
