@@ -15,8 +15,9 @@ def template():
     return render_template("top.html")
 
 
-@app.route("/point")
-def point():
+@app.route("/menu")
+def menu():
+    return render_template("menu.html")
 
 
 @app.errorhandler(404)
