@@ -1,7 +1,6 @@
 # Flaskからimportしてflaskを使えるようにする。
 from flask import Flask, render_template, request, redirect
 import sqlite3
-import random
 
 # appっていう名前でFlaskアプリを作っていくよーみたいな
 app = Flask(__name__)
@@ -13,6 +12,16 @@ app.secret_key = "prog"
 def template():
     return render_template("top.html")
 
+<<<<<<< HEAD
+=======
+@app.route("/map")
+def map():
+    return render_template("map.html")
+@app.route("/menu")
+def menu():
+    return render_template("menu.html")
+
+>>>>>>> 1a1a9b6e8c2fcfdedd7f100452eec2ee50c72f8c
 @app.route("/login")
 def login():
     return render_template("login.html")
