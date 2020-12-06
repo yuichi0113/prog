@@ -17,6 +17,16 @@ def template():
 def menu():
     return render_template("menu.html")
 
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+
+
+
+
+    
+
 @app.errorhandler(404)
 def notfound(code):
     return "404ページだよ。ごめんね"
