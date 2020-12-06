@@ -12,11 +12,9 @@ app.secret_key = "prog"
 def template():
     return render_template("top.html")
 
-<<<<<<< HEAD
 @app.route("/map")
 def map():
     return render_template("map.html")
-=======
 @app.route("/menu")
 def menu():
     return render_template("menu.html")
@@ -28,7 +26,6 @@ def menu2():
 @app.route("/menu3")
 def menu3():
     return render_template("menu3.html")
->>>>>>> d65a5265474084e4104507a1b0af1beb5d274140
 
 @app.errorhandler(404)
 def notfound(code):
