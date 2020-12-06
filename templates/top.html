@@ -13,21 +13,28 @@
 
 <body>
     <!-- ハンバーガーメニュー -->
-    <!-- <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      
-      <nav class="globalMenuSp">
-          <ul>
-              <li><a href="#">Menu1</a></li>
-              <li><a href="#">Menu2</a></li>
-              <li><a href="#">Menu3</a></li>
-              <li><a href="#">Menu4</a></li>
-              <li><a href="#">Menu5</a></li>
-          </ul>
-      </nav> -->
+    <header class="ham-header">
+        <nav class="pc-nav">
+           <ul>
+                <li><a href="#">PROFILE</a></li>
+                <li><a href="#">MAP</a></li>
+                <li><a href="#">使い方</a></li>
+                <li><a href="#">SIGN OUT</a></li>
+           </ul>
+        </nav>
+        <nav class="sp-nav">
+           <ul>
+                <li><a href="#">PROFILE</a></li>
+                <li><a href="#">MAP</a></li>
+                <li><a href="#">使い方</a></li>
+                <li><a href="#">SIGN OUT</a></li>
+                <li class="close"><span>CLOSE</span></li>
+           </ul>
+        </nav>
+        <div id="hamburger">
+           <span></span>
+        </div>
+     </header>
     <!-- ハンバーガーメニュー -->
 
     {% block content %}
