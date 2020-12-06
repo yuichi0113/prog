@@ -9,9 +9,15 @@ app = Flask(__name__)
 # 秘密鍵
 app.secret_key = "prog"
 
+
 @app.route("/")
 def template():
     return render_template("top.html")
+
+
+@app.route("/point")
+def point():
+
 
 @app.errorhandler(404)
 def notfound(code):
