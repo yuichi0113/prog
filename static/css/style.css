@@ -1,4 +1,4 @@
-
+/* 
 /* ログインページ始まり */
 body,
 .signin {
@@ -15,7 +15,7 @@ body,
     width: 405px;
     margin: auto;
     padding: 60px 60px;
-    background: url(https://picsum.photos/id/1004/5616/3744) no-repeat center center #505050;
+    background: url(https://public.potaufeu.asahi.com/2fbf-p/picture/19614969/061f4424590c908608feacbd12f7f845_640px.jpg) no-repeat center center #505050;
     background-size: cover;
     box-shadow: 0px 30px 60px -5px #000;
 }
@@ -173,4 +173,5 @@ a {
     color: rgba(255, 255, 255, 0.2);
 }
 
+*/
 /* ログインページ終わり */
