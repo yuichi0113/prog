@@ -19,13 +19,15 @@ def map():
 def menu():
     return render_template("menu.html")
 
-@app.route("/menu2")
-def menu2():
-    return render_template("menu2.html")
+@app.route("/login")
+def login():
+    return render_template("login.html")
 
-@app.route("/menu3")
-def menu3():
-    return render_template("menu3.html")
+
+
+
+
+    
 
 @app.errorhandler(404)
 def notfound(code):
