@@ -29,6 +29,11 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/point")
+def point():
+    return render_template("point.html")
+
+
 @app.errorhandler(404)
 def notfound(code):
     return "404ページだよ。ごめんね"

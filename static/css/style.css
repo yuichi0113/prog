@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-.name h1 {
+/* .name h1 {
     font-size: 50px;
 }
 
@@ -9,7 +8,7 @@
     padding: 10px;
     text-decoration: none;
     color: white;
-}
+} */
 
 /* ログインページ始まり */
 body,
@@ -174,21 +173,20 @@ hr {
     border: 1px solid rgba(255, 255, 255, 0.1);
     top: 85px;
     position: relative;
-=======
-* {
-    margin: 0;
-    padding: 0;
->>>>>>> 1a1a9b6e8c2fcfdedd7f100452eec2ee50c72f8c
-}
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-}
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-.item {
-    width: 20%;
-    height: 200px;
-    background-color: gray;
-    margin: 20px 20px;
-}
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        width: 20%;
+        height: 200px;
+        background-color: gray;
+        margin: 20px 20px;
+    }
