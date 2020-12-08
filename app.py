@@ -13,6 +13,14 @@ app.secret_key = "prog"
 def template():
     return render_template("top.html")
 
+@app.route("/map")
+def map():
+    return render_template("map.html")
+
+@app.route("/touroku")
+def touroku():
+    return render_template("touroku.html")
+
 @app.route("/login")
 def login():
     return render_template("login.html")
