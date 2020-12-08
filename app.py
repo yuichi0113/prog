@@ -15,9 +15,10 @@ def template():
 @app.route("/map")
 def map():
     return render_template("map.html")
-@app.route("/menu")
-def menu():
-    return render_template("menu.html")
+
+@app.route("/touroku")
+def touroku():
+    return render_template("touroku.html")
 
 @app.route("/login")
 def login():
