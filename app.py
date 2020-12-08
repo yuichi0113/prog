@@ -1,6 +1,7 @@
 # Flaskからimportしてflaskを使えるようにする。
 from flask import Flask, render_template, request, redirect
 import sqlite3
+import random
 
 # appっていう名前でFlaskアプリを作っていくよーみたいな
 app = Flask(__name__)
@@ -12,8 +13,6 @@ app.secret_key = "prog"
 def template():
     return render_template("top.html")
 
-<<<<<<< HEAD
-=======
 @app.route("/map")
 def map():
     return render_template("map.html")
@@ -22,87 +21,214 @@ def map():
 def touroku():
     return render_template("touroku.html")
 
->>>>>>> 1a1a9b6e8c2fcfdedd7f100452eec2ee50c72f8c
 @app.route("/login")
 def login():
     return render_template("login.html")
+    
+@app.route('/<name>')
+def greet(name):
+    return name + "さんこんにちは"
 
-#!/usr/bin/env python3
-from flask import Flask, request, Response, abort, render_template
-from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin
-from collections import defaultdict
 
-app = Flask(__name__)
-login_manager = LoginManager()
-login_manager.init_app(app)
-app.config['SECRET_KEY'] = "secret"
+@app.route('/template')
+def template():
+    py_name = 'wataru'
+    return render_template('index.html', name=py_name)
 
-class User(UserMixin):
-    def __init__(self, id, name, password):
-        self.id = id
-        self.name = name
-        self.password = password
+# @app.route('/weather')
+# def weather():
+#     py_weather = '大雪のちみぞれ'
+#     return render_template('weather.html',tenki = py_weather)
 
-# ログイン用ユーザー作成
-users = {
-    1: User(1, "user01", "password"),
-    2: User(2, "user02", "password")
-}
 
-# ユーザーチェックに使用する辞書作成
-nested_dict = lambda: defaultdict(nested_dict)
-user_check = nested_dict()
-for i in users.values():
-    user_check[i.name]["password"] = i.password
-    user_check[i.name]["id"] = i.id
+@app.route('/weather')
+def weather():
+    py_weather = '大雪のちみぞれ'
+    return render_template('base.html', tenki=py_weather)
 
-@login_manager.user_loader
-def load_user(user_id):
-    return users.get(int(user_id))
 
-@app.route('/')
-def home():
-    return Response("home: <a href='/login/'>Login</a> <a href='/protected/'>Protected</a> <a href='/logout/'>Logout</a>")
+@app.route('/dbtest')
+def dbtest():
+    # flasktest.dbに接続
+    conn = sqlite3.connect('flasktest.db')
+    # 中身が見られるようにしている
+    c = conn.cursor()
+    # SQL文の実行
+    c.execute("select name,age,address from users")
+    # 取ってきたレコードを格納
+    user_info = c.fetchone()
+    # データベース接続完了
+    c.close()
 
-# ログインしないと表示されないパス
-@app.route('/protected/')
-@login_required
-def protected():
-    return Response('''
-    protected<br />
-    <a href="/logout/">logout</a>
-    ''')
+    print(user_info)
+    return render_template('dbtest.html', user_info=user_info)
 
-# ログインパス
-@app.route('/login/', methods=["GET", "POST"])
-def login():
-    if(request.method == "POST"):
-        # ユーザーチェック
-        if(request.form["username"] in user_check and request.form["password"] == user_check[request.form["username"]]["password"]):
-            # ユーザーが存在した場合はログイン
-            login_user(users.get(user_check[request.form["username"]]["id"]))
-            return Response('''
-            login success!<br />
-            <a href="/protected/">protected</a><br />
-            <a href="/logout/">logout</a>
-            ''')
+
+@app.route('/add', methods=["GET"])
+def add_get():
+    if 'user_id' in session:
+        return render_template('add.html')
+    else:
+        return redirect('/login')
+
+    # get通信はページを読み取る専門
+
+
+@app.route('/add', methods=["POST"])
+def add_post():
+    # フォームのtaskに入力されたデータを取得
+    task = request.form.get("task")
+    user_id = session['user_id']
+    # DBと接続
+    conn = sqlite3.connect('flasktest.db')
+    c = conn.cursor()
+    c.execute("insert into task values(null,?,?)", (task, user_id))
+    # 変更を確定する
+    conn.commit()
+    conn.close()
+    return redirect('/list')
+
+    # post通信はデータを追加・登録・更新したりできる。
+
+
+@app.route('/list')
+def task_list():
+    if 'user_id' in session:
+        user_id = session['user_id']
+        conn = sqlite3.connect('flasktest.db')
+        c = conn.cursor()
+        c.execute("select id, task from task where user_id = ?", (user_id,))
+        task_list = []
+        for row in c.fetchall():
+            task_list.append({"id": row[0], "task": row[1]})
+        c.close()
+        return render_template('tasklist.html', task_list=task_list)
+
+    else:
+        return redirect('/login')
+
+
+@app.route('/edit/<int:id>')
+def edit(id):
+    if 'user_id' in session:
+        conn = sqlite3.connect('flasktest.db')
+        c = conn.cursor()
+        c.execute("select task from task where id = ?", (id,))
+        task = c.fetchone()
+        c.close()
+        if task is not None:
+            task = task[0]
         else:
-            return abort(401)
+            return "タスクはありません！"
+        item = {"id": id, "task": task}
+        return render_template('edit.html', task=item)
+    else:
+        return redirect("/login")
+
+
+@app.route('/edit', methods=["POST"])
+def edit_post():
+    item_id = request.form.get("html_task_id")
+    # inputタグはテキスト型なので、int型に修正
+    item_id = int(item_id)
+    task = request.form.get("html_task")
+
+    conn = sqlite3.connect('flasktest.db')
+    c = conn.cursor()
+    c.execute("UPDATE task SET task = ? WHERE id = ?", (task, item_id))
+    conn.commit()
+    c.close()
+    return redirect('/list')
+
+
+@app.route('/del/<int:id>')
+def task_del(id):
+    if 'user_id' in session:
+        conn = sqlite3.connect('flasktest.db')
+        c = conn.cursor()
+        c.execute("delete from task where id = ?", (id,))
+        conn.commit()
+        c.close()
+        return redirect('/list')
+    else:
+        return redirect("/login")
+
+
+@app.route('/regist')
+def regist_get():
+    if 'user_id' in session:
+        return redirect("/list")
+    else:
+        return render_template('regist.html')
+
+
+@app.route('/regist', methods=["POST"])
+def regist_post():
+    name = request.form.get("member_name")
+    print(name)
+    password = request.form.get("member_password")
+    print(password)
+    conn = sqlite3.connect('flasktest.db')
+    c = conn.cursor()
+    c.execute("insert into member values(null,?,?)", (name, password))
+    conn.commit()
+    c.close()
+    return "登録完了"
+
+
+@app.route('/login', methods=["GET"])
+def login_get():
+    if 'user_id' in session:
+        return redirect("/list")
     else:
         return render_template("login.html")
+# ログインの時は一番最初にloginページを読み込む必要があるからrender_templateになる
 
-# ログアウトパス
-@app.route('/logout/')
-@login_required
+
+@app.route('/login', methods=["POST"])
+def login_post():
+    name = request.form.get("member_name")
+    password = request.form.get("member_password")
+    conn = sqlite3.connect('flasktest.db')
+    c = conn.cursor()
+    c.execute("select id from member where name=? and password = ?",
+              (name, password))
+    user_id = c.fetchone()
+    print(user_id)
+    c.close()
+    if user_id is None:
+        return render_template("login.html")
+    else:
+        session['user_id'] = user_id[0]
+        return redirect("/list")
+
+
+@app.route('/logout')
 def logout():
-    logout_user()
-    return Response('''
-    logout success!<br />
-    <a href="/login/">login</a>
-    ''')
+    session.pop('user_id', None)
+    return redirect("/login")
 
-if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=8080,debug=True)
+
+@app.errorhandler(404)
+def notfound(code):
+    return "404ページだよ。すまんね"
+
+
+# flaskが持っている開発用サーバーを起動する
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
+
+
+
+
+@app.route("touroku.html")
+def login():
+    return render_template("touroku.html")
+
+
+
 
 @app.route("/menu")
 def menu():
