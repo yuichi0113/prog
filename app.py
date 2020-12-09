@@ -31,6 +31,12 @@ def login():
 
 @app.route("/point")
 def point():
+    if
+
+    # conn = sqlite3.connect('flasktest.db')
+    # c = conn.cursor()
+    # c.execute("select person_name from persons")
+
     return render_template("point.html")
 
 
