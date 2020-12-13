@@ -9,9 +9,11 @@ app = Flask(__name__)
 # 秘密鍵
 app.secret_key = "prog"
 
+
 @app.route("/")
 def template():
     return render_template("top.html")
+
 
 @app.route("/map")
 def map():
@@ -21,9 +23,9 @@ def map():
 def lesson():
     return render_template("lesson.html")
     
-@app.route("/point")
-def point():
-    return render_template("point.html")
+# @app.route("/point")
+# def point():
+#     return render_template("point.html")
 
 @app.route("/regist", methods=["GET"])
 def regist_get():
@@ -70,6 +72,18 @@ def logout():
     session.pop('user_id', None)
     return redirect("/login")
 
+
+@app.route("/point")
+def point():
+    if 'user_id' in session:
+        conn = sqlite3.connect('prog.db')
+        c = conn.cursor()
+        c.execute("select user_name , point, Lv, from user where id = ?", (id,))
+        user_status = c.fetchone()
+        c.close()
+        return render_template("point.html", user_status=user_status)
+    else:
+        return redirect("/login")
 
 @app.errorhandler(404)
 def notfound(code):
