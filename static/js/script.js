@@ -14,9 +14,9 @@ $(function() {
 // ログインアニメ
 $(function() {
 	setTimeout(function(){
-		$('.start p').fadeIn(1600);
-	},400); //0.5秒後にロゴをフェードイン
+		$('.start p').fadeIn(500);
+	},300); //0.3秒後にロゴをフェードイン
 	setTimeout(function(){
 		$('.start').fadeOut(500);
-	},2000); //2.5秒後にフェードアウト
+	},1500); //1.5秒後にフェードアウト
 });

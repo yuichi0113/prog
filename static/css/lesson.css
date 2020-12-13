@@ -1,0 +1,594 @@
+@charset "UTF-8";
+
+/* * * * * * * * *
+* base
+* * * * * * * * */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: poppins, sans-serif;
+  font-size: 16px;
+  color: #2b2b2b;
+}
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #2b2b2b;
+  text-decoration: none;
+}
+section {
+  text-align: center;
+}
+tbody {
+  vertical-align: inherit;
+}
+th, td {
+  font-weight: normal;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+
+/* * * * * * * * *
+* utility
+* * * * * * * * */
+.u-content-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.u-heading {
+  position: relative;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+.u-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 40px;
+  height: 1px;
+  background: #2b2b2b;
+  transform: translateX(-50%);
+}
+.u-text {
+  padding-bottom: 40px;
+  line-height: 1.8;
+  letter-spacing: 1.4px;
+}
+
+/* * * * * * * * *
+* header
+* * * * * * * * */
+.header {
+  position: relative;
+  width: 100%;
+  height: 620px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../css/images/lesson-img/header.png');
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  font-family: myriad-pro, sans-serif;
+}
+.header__nav {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 64px;
+}
+.position-change {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.color-chnage {
+  color: #2b2b2b;
+  background: #fff;
+  border-bottom: 1px solid #a0a0a0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.header__nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__nav__logo {
+  font-size: 36px;
+}
+.hamburger-menu {
+  position: relative;
+  width: 32px;
+  height: 64px;
+  cursor: pointer;
+}
+.hamburger-menu__line,
+.hamburger-menu__line::before,
+.hamburger-menu__line::after,
+.hamburger-menu__line--dummy {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: #fff;
+}
+.color-chnage span,
+.color-chnage span::before,
+.color-chnage span::after {
+  background: #2b2b2b;
+}
+.hamburger-menu__line::before,
+.hamburger-menu__line::after {
+  content: '';
+}
+
+.hamburger-menu__line,
+.hamburger-menu__line--dummy {
+  top: 50%;
+  transition: all .3s;
+}
+
+.active .hamburger-menu__line {
+  transform: rotate(-45deg);
+}
+.active .hamburger-menu__line--dummy {
+  transform: rotate(45deg);
+}
+
+.hamburger-menu__line::before {
+  top: calc(50% - 8px);
+  transition: all .3s;
+}
+.active .hamburger-menu__line::before {
+  top: 50%;
+  opacity: 0;
+}
+
+.hamburger-menu__line::after {
+  top: calc(50% + 8px);
+  transition: all .3s;
+}
+.active .hamburger-menu__line::after {
+  top: 50%;
+  opacity: 0;
+}
+
+.header-menu {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .9);
+  transition: all .3s;
+}
+.header__menu__item {
+  padding: 0;
+  line-height: 11vh;
+  text-align: center;
+  font-size: 18px;
+  border-top: 1px solid #ccc;
+}
+.header__menu__item:last-of-type {
+  border-bottom: 1px solid #ccc;
+}
+.height-change {
+  height: calc(100vh - 64px);
+}
+
+.header__title {
+  padding-top: 240px;
+  font-size: 120px;
+  font-weight: normal;
+}
+.header__title__sub {
+  word-spacing: 4px;
+}
+.header__title__sub::before,
+.header__title__sub::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 2px;
+  margin: 0 8px;
+  background: #fff;
+  vertical-align: middle;
+}
+
+/* * * * * * * * *
+* Concept
+* * * * * * * * */
+.concept {
+  width: 100%;
+  padding: 80px 0;
+  background: linear-gradient(#fff 70%, #ededed 30%);
+}
+.concept__image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* * * * * * * * *
+* Work
+* * * * * * * * */
+.work {
+  width: 100%;
+  padding-top: 80px;
+}
+.work__contents {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  height: 1680px;
+}
+.work__content {
+  width: 420px;
+  padding-bottom: 80px;
+  text-align: left;
+  line-height: 1.8;
+}
+.work__content:nth-of-type(1) {order: 1;}
+.work__content:nth-of-type(2) {
+  order: 3;
+  margin-top: 120px;
+}
+.work__content:nth-of-type(3) {order: 2;}
+.work__content:nth-of-type(4) {order: 4;}
+
+.work__content__image {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.work__content__heading {
+  font-size: 24px;
+}
+.work__content__text {
+  letter-spacing: 1.5px;
+}
+
+/* * * * * * * * *
+* Florist
+* * * * * * * * */
+.florist {
+  width: 100%;
+  padding-top: 80px;
+  background: linear-gradient(#ededed 60%, #fff 40%);
+}
+.florist__persons {
+  display: flex;
+  justify-content: space-between;
+}
+.florist__person {
+  width: 300px;
+  padding-bottom: 40px;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 0;
+}
+.florist__person__image {
+  width: 100%;
+  margin-bottom: 12px;
+}
+.florist__person__name {
+  font-size: 24px;
+}
+.florist__person__introduce {
+  font-size: 16px;
+  letter-spacing: 1.5px;
+}
+
+/* * * * * * * * *
+* Shop information
+* * * * * * * * */
+.shopInformation {
+  width: 100%;
+  padding: 80px 0 120px;
+}
+.shopInformation__contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shopInformation__image {
+  width: 50%;
+}
+.shopInformation__table {
+  width: 45%;
+  border-spacing: 16px;
+  text-align: left;
+  letter-spacing: 1.5px;
+  line-height: 2;
+}
+.shopInformation__table__heading {
+  width: 25%;
+  border-right: 1px solid #a0a0a0;
+}
+
+/* * * * * * * * *
+* Contact us
+* * * * * * * * */
+.contactUs {
+  width: 100%;
+  padding: 80px 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('../css/images/lesson-img/contact_us.png');
+  background-size: cover;
+}
+.btn__contact {
+  position: relative;
+  display: inline-block;
+  width: 360px;
+  padding-left: 40px;
+  height: 80px;
+  line-height: 80px;
+  letter-spacing: 2px;
+  border: 1px solid #a0a0a0;
+  background: #fff;
+  font-size: 20px;
+}
+.btn__contact::before,
+.btn__contact::after {
+  content: '';
+  position: absolute;
+  border-radius: 2px;
+}
+.btn__contact::before {
+  top: 30px;
+  left: 85px;
+  width: 30px;
+  height: 20px;
+  border: 1px solid #2b2b2b;
+}
+.btn__contact::after {
+  top: 21px;
+  left: 90px;
+  width: 20px;
+  height: 20px;
+  border-right: 1px solid #2b2b2b;
+  border-bottom: 1px solid #2b2b2b;
+  transform: rotate(45deg);
+}
+
+/* * * * * * * * *
+* footer
+* * * * * * * * */
+.footer {
+  width: 100%;
+  text-align: center;
+}
+.footer__copyright {
+  line-height: 40px;
+  letter-spacing: 1.4px;
+}
+
+/* * * * * * * * *
+* レスポンシブ対応
+* * * * * * * * */
+@media (max-width: 670px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* * * * * * * * *
+  * utility
+  * * * * * * * * */
+  .u-content-wrapper {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+  }
+  .u-heading {
+    font-size: 28px;
+  }
+  .u-text {
+    text-align: left;
+    padding-bottom: 32px;
+  }
+  .u-display__pc {
+    display: none;
+  }
+
+  /* * * * * * * * *
+  * header
+  * * * * * * * * */
+  .header {
+    height: 355px;
+    padding-top: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../css/images/lesson-img/header.png) 50%;
+    background-size: cover;
+  }
+  .header__nav {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+  }
+  .header__nav__logo {
+    font-size: 24px;
+  }
+  .header__title {
+    padding-top: 120px;
+    font-size: 64px;
+  }
+
+  /* * * * * * * * *
+  * Concept
+  * * * * * * * * */
+  .concept {
+    padding: 40px 0;
+    background: linear-gradient(#fff 75%, #ededed 25%);
+  }
+
+  /* * * * * * * * *
+  * Work
+  * * * * * * * * */
+  .work {
+    position: relative;
+    padding: 40px 0 24px;
+  }
+  .work__contents__wrapper {
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+  }
+  .work__contents__wrapper::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    border-radius: 8px;
+  }
+  .work__contents__wrapper::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,.15);
+    border-radius: 8px;
+  }
+  .work__contents__wrapper::-webkit-scrollbar-track {
+    background: rgba(0,0,0,.1);
+    border-radius: 8px;
+  }
+  .work__contents {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: auto;
+  }
+  .work__content {
+    width: 80vw;
+    padding-bottom: 40px;
+  }
+  .work__content:not(:last-of-type) {
+    margin-right: 24px;
+  }
+
+  .work::before,
+  .work::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #333;
+  }
+
+  .work::before {
+    bottom: 26px;
+    left: 79%;
+    overflow: hidden;
+    transition: .3s ease-in-out;
+  }
+  .work::after {
+    bottom: 30px;
+    right: 5%;
+    transform: rotate(45deg);
+    transition: .9s ease-in-out;
+  }
+
+  .arrow_display.work::before {
+    width: 60px;
+  }
+  .arrow_display.work::after {
+    width: 10px;
+  }
+
+  .work__content:nth-of-type(2) {
+    margin-top: 0;
+  }
+  .work__content__image {
+    height: 200px;
+    margin-bottom: 0;
+    object-fit: cover;
+  }
+  .work__image__gift {
+    object-position: 0 75%;
+  }
+  .work__image__decoration {
+    object-position: 0 65%;
+  }
+  .work__image__wedding {
+    object-position: 0 60%;
+  }
+
+  /* * * * * * * * *
+  * Florist
+  * * * * * * * * */
+  .florist {
+    padding: 40px 0;
+    background: #ededed 55%;
+  }
+  .florist__persons__wrapper {
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+  }
+  .florist__persons__wrapper::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    border-radius: 8px;
+  }
+  .florist__persons__wrapper::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,.15);
+    border-radius: 8px;
+  }
+  .florist__persons__wrapper::-webkit-scrollbar-track {
+    background: rgba(0,0,0,.1);
+    border-radius: 8px;
+  }
+  .florist__persons {
+    display: inline-flex;
+  }
+  .florist__person {
+    width: 80vw;
+  }
+  .florist__person:not(:last-of-type) {
+    margin-right: 24px;
+  }
+  .florist__person__image {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  /* * * * * * * * *
+  * Shop information
+  * * * * * * * * */
+  .shopInformation {
+    padding: 40px 0;
+  }
+  .shopInformation__contents {
+    display: block;
+  }
+  .shopInformation__image,
+  .shopInformation__table {
+    width: 100%;
+  }
+
+  /* * * * * * * * *
+  * Contact us
+  * * * * * * * * */
+  .contactUs {
+    padding: 40px 0 64px;
+  }
+  .btn__contact {
+    width: 280px;
+    padding-left: 50px;
+  }
+  .btn__contact::before {
+    left: 45px;
+  }
+  .btn__contact::after {
+    left: 50px;
+  }
+}
