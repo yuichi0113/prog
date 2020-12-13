@@ -1,5 +1,5 @@
 # Flaskからimportしてflaskを使えるようにする。
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
 import sqlite3
 import random
 
@@ -9,42 +9,69 @@ app = Flask(__name__)
 # 秘密鍵
 app.secret_key = "prog"
 
+
 @app.route("/")
 def template():
     return render_template("top.html")
+
 
 @app.route("/map")
 def map():
     return render_template("map.html")
 
+
+<< << << < HEAD
+
+
+@app.route("/menu")
+def menu():
+    return render_template("menu.html")
+
+
+== == == =
+
+
 @app.route("/touroku")
 def touroku():
     return render_template("touroku.html")
 
+
+>>>>>> > faa3bfdb41b017880bb72d367c20cf7ec949f8d5
+
+
 @app.route("/login")
 def login():
     return render_template("login.html")
-    
-@app.route('/<name>')
-def greet(name):
-    return name + "さんこんにちは"
 
 
-@app.route('/template')
-def template():
-    py_name = 'wataru'
-    return render_template('index.html', name=py_name)
+# @app.route('/<name>')
+# def greet(name):
+#     return name + "さんこんにちは"
+
+
+# @app.route('/template')
+# def template():
+#     py_name = 'wataru'
+#     return render_template('index.html', name=py_name)
+
+
+@app.route("/point")
+def point():
+    if 'user_id' in session:
+        conn = sqlite3.connect('prog.db')
+        c = conn.cursor()
+        c.execute("select user_name , point, Lv, from user where id = ?", (id,))
+        user_status = c.fetchone()
+        c.close()
+        return render_template("point.html", user_status=user_status)
+    else:
+        return redirect('/login')
+
 
 # @app.route('/weather')
 # def weather():
 #     py_weather = '大雪のちみぞれ'
-#     return render_template('weather.html',tenki = py_weather)
-
-
-@app.route('/weather')
-def weather():
-    py_weather = '大雪のちみぞれ'
-    return render_template('base.html', tenki=py_weather)
+#     return render_template('base.html', tenki=py_weather)
 
 
 @app.route('/dbtest')
@@ -219,20 +246,15 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 
-
-
-
-
 @app.route("touroku.html")
 def login():
     return render_template("touroku.html")
 
 
-
-
 @app.route("/menu")
 def menu():
     return render_template("menu.html")
+
 
 @app.errorhandler(404)
 def notfound(code):
