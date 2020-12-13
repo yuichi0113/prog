@@ -75,7 +75,7 @@ li {
   position: relative;
   width: 100%;
   height: 620px;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../css/images/lesson-img/header.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../css/images/lesson-img/lesson-img1.jpg');
   background-size: cover;
   text-align: center;
   color: #fff;
