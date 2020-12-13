@@ -20,23 +20,13 @@ def map():
     return render_template("map.html")
 
 
-<< << << < HEAD
-
-
 @app.route("/menu")
 def menu():
     return render_template("menu.html")
 
-
-== == == =
-
-
 @app.route("/touroku")
 def touroku():
     return render_template("touroku.html")
-
-
->>>>>> > faa3bfdb41b017880bb72d367c20cf7ec949f8d5
 
 
 @app.route("/login")
