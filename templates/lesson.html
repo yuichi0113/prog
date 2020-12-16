@@ -6,8 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prog</title>
     <link rel="stylesheet" href="../static/css/lesson.css"> 
+    <script src="../static/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../static/js/script.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
   </head>
   <body>
+
+    <div class="start">
+      <p><img src="../static/css/images/prog3.png" alt="PROG"></p>
+    </div>
+
     <header class="header">
       <div class="header__nav">
         <div class="u-content-wrapper header__nav__wrapper">
@@ -18,119 +27,129 @@
           </div>
         </div>
         <ul class="header-menu">
-          <li class="header__menu__item"><a href="#">Concept</a></li>
-          <li class="header__menu__item"><a href="#">lesson</a></li>
-          <li class="header__menu__item"><a href="#">How To Use</a></li>
-          <li class="header__menu__item"><a href="#">Contact us</a></li>
+          <li class="header__menu__item"><a href="/login">Login</a></li>
+          <li class="header__menu__item"><a href="/profile">My Page</a></li>
+          <li class="header__menu__item"><a href="/map">Lesson</a></li>
+          <li class="header__menu__item"><a href="/logout">Logout</a></li>
+          <li class="header__menu__item"><a href="#contact">Contact us</a></li>
         </ul>
       </div>
       <div class="u-content-wrapper">
         <h1 class="header__title">Hello World</h1>
-        <p class="header__title__sub">programming study guide</p>
+        <p class="header__title__sub">programming learning guide</p>
       </div>
     </header>
     <section class="concept">
       <div class="u-content-wrapper">
         <h2 class="u-heading">Concept</h2>
-        <p class="u-text">Progは、プログラミングの基礎を学んだ方に向けた学習ガイドアプリです。<br class="u-display__pc">次に何をしたらいいのかわからないという悩みを解決したい。<br class="u-display__pc">そんな思いをもった方に向けた、効率よくプログラミングの勉強ができるアプリケーションです。</p>
-        <img class="concept__image" src="../static/css/images/lesson-img/concept.png">
+        <p class="u-text">Progはプログラミングの基礎を学んだ方に向けた学習ガイドアプリです。<br class="u-display__pc">基礎は勉強したけれど、その後何をしたらいいか分からない…<br class="u-display__pc">そんな悩みを抱えている方に、効率よくスキルアップしていく学習方法を提案しています。</p>
+        <img class="concept__image" src="../static/css/images/lesson-img/lesson-img2.jpg">
       </div>
     </section>
     <section class="work">
       <div class="u-content-wrapper">
-        <h2 class="u-heading">Work</h2>
-        <p id="work__desc" class="u-text">オーダーメイドでのブーケ・アレンジメントのデザインのほか、<br class="u-display__pc">ウェディングやイベントの装花なども行なっています。<br class="u-display__pc">一人一人にあったご提案をさせていただきます。</p>
+        <h2 class="u-heading">Learning flow</h2>
+        <p id="work__desc" class="u-text">Progの学習方法はとっても簡単。<br class="u-display__pc">1日30分程度のタスクを順番通りに進めていくだけ！<br class="u-display__pc">タスクを進めるごとに基礎を深めていくことができます。</p>
         <div class="work__contents__wrapper">
           <div class="work__contents">
             <div class="work__content">
-              <img class="work__content__image work__image__gift" src="../static/css/images/lesson-img/work_gift.png" alt="白い花束の写真">
-              <h3 class="work__content__heading">Gift</h3>
-              <p class="work__content__text">花束をお送りしたいお相手、伝えたいお気持ちに合わせたプレゼント用花束のアレンジメントをさせていただきます。花言葉などの豆知識もお伝えします。</p>
+              <img class="work__content__image work__image__task" src="../static/css/images/lesson-img/lesson-img3.jpg" alt="">
+              <h3 class="work__content__heading">Task</h3>
+              <p class="work__content__text">あああああああああああああああああああああああああああああああああああああああああ</p>
             </div>
             <div class="work__content">
-              <img class="work__content__image work__image__decoration" src="../static/css/images/lesson-img/work_decoretion.png" alt="ラッピングされたマカロンの写真">
-              <h3 class="work__content__heading">Decoration</h3>
-              <p class="work__content__text">お写真を彩るお花を一輪から販売。一定期間のご契約で定期的にご自宅へ配送させていただくことも可能です。</p>
+              <img class="work__content__image work__image__point" src="../static/css/images/lesson-img/lesson-img4.jpg" alt="">
+              <h3 class="work__content__heading">Point</h3>
+              <p class="work__content__text">あああああああああああああああああああああああああああああああああああああああああ</p>
             </div>
             <div class="work__content">
-              <img class="work__content__image work__image__wedding" src="../static/css/images/lesson-img/work_wedding.png" alt="白いブーケの写真">
-              <h3 class="work__content__heading">Wedding</h3>
-              <p class="work__content__text">ウエディングドレスに合わせたブーケや式場の雰囲気に合う装花をご提案。お打ち合わせの流れや回数、費用などにつきましてはお問い合わせください。</p>
+              <img class="work__content__image work__image__level" src="../static/css/images/lesson-img/lesson-img4.jpg" alt="">
+              <h3 class="work__content__heading">Level</h3>
+              <p class="work__content__text">あああああああああああああああああああああああああああああああああああああああああ</p>
             </div>
             <div class="work__content">
-              <img class="work__content__image work__image__for_yourself" src="../static/css/images/lesson-img/work_for_yourself.png" alt="部屋に白い花が飾られた写真">
-              <h3 class="work__content__heading">For yourself</h3>
-              <p class="work__content__text">お部屋の雰囲気やライフスタイルをお聞きしてご自宅用の花束をご提案し、少しでも長く咲かせるコツもお教えします。花束に合った花瓶をご提案することも可能です。</p>
+              <img class="work__content__image work__image__for_yourself" src="../static/css/images/lesson-img/lesson-img3.jpg" alt="">
+              <h3 class="work__content__heading">AAAAA</h3>
+              <p class="work__content__text">あああああああああああああああああああああああああああああああああああああああああ</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="florist">
+    <section class="users">
       <div class="u-content-wrapper">
-        <h2 class="u-heading">Florist</h2>
-        <p class="u-text">Shiro専属のフローリストたちをご紹介。<br class="u-display__pc">得意の分野であなたのオーダーを最大限に叶えます。</p>
-        <div class="florist__persons__wrapper">
-          <div class="florist__persons">
-            <div class="florist__person">
-              <img class="florist__person__image" src="../static/css/images/lesson-img/florist_shiyu.png" alt="shiyuの写真">
-              <h3 class="florist__person__name">Shiyu</h3>
-              <p class="florist__person__introduce">お花茶屋大学フラワーアレンジメント科を卒業後、さまざまな白い花を探すために世界を一周し、Shiroの創業者となる。</p>
+        <h2 class="u-heading">User's Voice</h2>
+        <p class="u-text">実際にProgを利用した人たちの声をご紹介。<br class="u-display__pc">利用者のリアルな感想をお届けします。</p>
+        <div class="users__voices__wrapper">
+          <div class="users__voices">
+            <div class="users__voice">
+              <a href="#">
+                <img class="users__voice__image" src="../static/css/images/lesson-img/user1.jpg" alt="user1の写真">
+                <h3 class="users__voice__name">fox</h3>
+                <p class="users__voice__introduce">帰宅してからの30分間、サクッと学べるのが魅力的です！いつの間にかProgで勉強するのが楽しみになっていました。</p>
+              </a>
             </div>
-            <div class="florist__person">
-              <img class="florist__person__image" src="../static/css/images/lesson-img/florist_mao.png" alt="maoの写真">
-              <h3 class="florist__person__name">Mao</h3>
-              <p class="florist__person__introduce">花の魅力に惹かれ、空間デザインの世界からフローリストの道を歩む。主に結婚式やイベントで使用するお花のディレクション担当。</p>
+            <div class="users__voice">
+              <a href="#">
+                <img class="users__voice__image" src="../static/css/images/lesson-img/user2.jpg" alt="user2の写真">
+                <h3 class="users__voice__name">cat</h3>
+                <p class="users__voice__introduce">自分のペースで学習を進められ、問題を解決するための実践的な訓練を積むことができたと感じます。</p>
+              </a>
             </div>
-            <div class="florist__person">
-              <img class="florist__person__image" src="../static/css/images/lesson-img/florist_omichan.png" alt="omichanの写真">
-              <h3 class="florist__person__name">Omichan</h3>
-              <p class="florist__person__introduce">フローリスト兼ガーデナーという特殊な経歴をもつ。豊富な知識と技術でお客様のオーダーを叶える。</p>
+            <div class="users__voice">
+              <a href="#">
+                <img class="users__voice__image" src="../static/css/images/lesson-img/user3.jpg" alt="user3の写真">
+                <h3 class="users__voice__name">dog</h3>
+                <p class="users__voice__introduce">Progは実際のWEBサービスなど、実践的なものを作っていくので、今後に役立ちそうです。</p>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="shopInformation">
+    <section class="company">
       <div class="u-content-wrapper">
-        <h2 class="u-heading">Shop information</h2>
-        <p class="u-text">Shiroの店舗情報をご紹介します。</p>
-        <div class="shopInformation__contents">
-          <img class="shopInformation__image" src="../static/css/images/lesson-img/shop_information.png" alt="白い花の写真">
-          <table class="shopInformation__table">
-            <tr>
-              <th class="shopInformation__table__heading">住所</th>
-              <td>〒810-0001<br>福岡県福岡市中央区天神0-0-0</td>
-            </tr>
-            <tr>
-              <th class="shopInformation__table__heading">電話番号</th>
-              <td>0120-000-000</td>
-            </tr>
-            <tr>
-              <th class="shopInformation__table__heading">営業時間</th>
-              <td>11:00-20:30<br>（定休日：水曜日）</td>
-            </tr>
-            <tr>
-              <th class="shopInformation__table__heading">アクセス</th>
-              <td>天神駅12a出口から徒歩6分<br>東京駅8b出口から徒歩12分</td>
-            </tr>
-          </table>
+        <h2 class="u-heading">Company</h2>
+        <!-- <p class="u-text">Shiroの店舗情報をご紹介します。</p> -->
+        <div class="company__contents">
+          <div class="p-company-info__map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d421945.2627201123!2d133.6668106982229!3d34.28814196691791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3553dcd4acb77eaf%3A0x2d81d6b2899bdab1!2z6aaZ5bed55yM!5e0!3m2!1sja!2sjp!4v1607960804279!5m2!1sja!2sjp" width="300" height="200" frameborder="0" style="border:0;"></iframe>          
+            <table class="company__table">
+              <tr>
+                <th class="company__table__heading">会社名</th>
+                <td>株式会社〇〇〇〇</td>
+              </tr>
+              <tr>
+                <th class="company__table__heading">代表者</th>
+                <td>◇◇ ◇◇◇</td>
+              </tr>
+              <tr>
+                <th class="company__table__heading">所在地</th>
+                <td>〒000-0000<br>香川県〇〇市〇〇区〇〇1-2-3</td>
+              </tr>
+              <tr>
+                <th class="company__table__heading">電話番号</th>
+                <td>0120-000-000</td>
+              </tr>
+            </table>
+          </div>
         </div>
-      </div>
     </section>
-    <section class="contactUs">
+    <section class="contactUs" id="contact">
       <div class="u-content-wrapper">
         <h2 class="u-heading">Contact us</h2>
-        <p class="u-text">イベントや結婚式でご利用する装花のご相談や、<br>フラワーアレンジメントのご予約などはこちらからお問い合わせください。</p>
+        <p class="u-text">Progに関するお問い合わせはこちらから。</p>
         <a class="btn__contact" href="#">お問い合わせ</a>
       </div>
     </section>
     <footer class="footer">
       <div class="u-content-wrapper">
-        <small class="footer__copyright">Copyright © Shiro All Rights Reserved.</small>
+        <small class="footer__copyright">Copyright © Prog All Rights Reserved.</small>
       </div>
     </footer>
 
+
+    <!-- 以下、script.jsに書き込み
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
       $(function() {
@@ -176,6 +195,6 @@
         });
   
       });
-      </script>
+      </script> -->
   </body>
 </html>
