@@ -1,60 +1,5 @@
 .hamburger {
-<<<<<<< HEAD
-    display : block;
-    position: fixed;
-    z-index : 3;
-    right : 30px;
-    top   : 15px;
-    width : 42px;
-    height: 42px;
-    cursor: pointer;
-    text-align: center;
-  }
-  .hamburger span {
-    display : block;
-    position: absolute;
-    width   : 30px;
-    height  : 2px ;
-    left    : 6px;
-    background : #fff;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition   : 0.3s ease-in-out;
-    transition        : 0.3s ease-in-out;
-  }
-  .hamburger span:nth-child(1) {
-    top: 10px;
-  }
-  .hamburger span:nth-child(2) {
-    top: 20px;
-  }
-  .hamburger span:nth-child(3) {
-    top: 30px;
-  }
-  
-  /* ナビ開いてる時のボタン */
-  .hamburger.active span:nth-child(1) {
-    top : 16px;
-    left: 6px;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform   : rotate(-45deg);
-    transform        : rotate(-45deg);
-  }
-  
-  .hamburger.active span:nth-child(2),
-  .hamburger.active span:nth-child(3) {
-    top: 16px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform   : rotate(45deg);
-    transform        : rotate(45deg);
-  }
-  
-  nav.globalMenuSp {
-    position: fixed;
-    z-index : 2;
-    top  : 0;
-    left : 0;
-=======
-    display: block;
+    <<<<<<< HEAD display: block;
     position: fixed;
     z-index: 3;
     right: 30px;
@@ -111,25 +56,70 @@ nav.globalMenuSp {
     z-index: 2;
     top: 0;
     left: 0;
->>>>>>> ed42e232f7554250a94d8f239e23469bf6b40977
-    color: #000;
+    =======display: block;
+    position: fixed;
+    z-index: 3;
+    right: 30px;
+    top: 15px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    left: 6px;
+    background: #fff;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+    top: 10px;
+}
+
+.hamburger span:nth-child(2) {
+    top: 20px;
+}
+
+.hamburger span:nth-child(3) {
+    top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+    top: 16px;
+    left: 6px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+    top: 16px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+nav.globalMenuSp {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    >>>>>>>ed42e232f7554250a94d8f239e23469bf6b40977 color: #000;
     background: #fff;
     text-align: center;
     transform: translateY(-100%);
     transition: all 0.6s;
     width: 100%;
-<<<<<<< HEAD
-  }
-  
-  nav.globalMenuSp ul {
-    background:#1161ed;
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-  }
-  
-  nav.globalMenuSp ul li {
-=======
+    <<<<<<< HEAD
 }
 
 nav.globalMenuSp ul {
@@ -140,37 +130,51 @@ nav.globalMenuSp ul {
 }
 
 nav.globalMenuSp ul li {
->>>>>>> ed42e232f7554250a94d8f239e23469bf6b40977
-    list-style-type: none;
+    =======
+}
+
+nav.globalMenuSp ul {
+    background: #1161ed;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+nav.globalMenuSp ul li {
+    >>>>>>>ed42e232f7554250a94d8f239e23469bf6b40977 list-style-type: none;
     padding: 0;
     width: 100%;
     border-bottom: 1px solid #fff;
-<<<<<<< HEAD
-  }
-  nav.globalMenuSp ul li:last-child {
+    <<<<<<< HEAD
+}
+
+nav.globalMenuSp ul li:last-child {
     padding-bottom: 0;
     border-bottom: none;
-  }
-  nav.globalMenuSp ul li:hover{
-    background :#fff;
-  }
-  
-  nav.globalMenuSp ul li a {
+}
+
+nav.globalMenuSp ul li:hover {
+    background: #fff;
+}
+
+nav.globalMenuSp ul li a {
     display: block;
     color: #fff;
     padding: 1em 0;
-    text-decoration :none;
+    text-decoration: none;
     letter-spacing: 1px;
-  }
-  nav.globalMenuSp ul li a:hover{
+}
+
+nav.globalMenuSp ul li a:hover {
     color: #1161ed;
-  }
-  
-  
-  /* このクラスを、jQueryで付与・削除する */
-  nav.globalMenuSp.active {
+}
+
+
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
     transform: translateY(0%);
-  }
+}
+
 =======
 }
 
@@ -200,4 +204,5 @@ nav.globalMenuSp ul li a:hover {
 nav.globalMenuSp.active {
     transform: translateY(0%);
 }
->>>>>>> ed42e232f7554250a94d8f239e23469bf6b40977
+
+>>>>>>>ed42e232f7554250a94d8f239e23469bf6b40977
