@@ -6,9 +6,30 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+.start {
+	background: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9990;
+}
+
+.start p {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	z-index: 9999;
+  color: #000;
+}
+
 body {
   margin: 0;
-  font-family: poppins, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 16px;
   color: #2b2b2b;
 }
@@ -79,7 +100,7 @@ li {
   background-size: cover;
   text-align: center;
   color: #fff;
-  font-family: myriad-pro, sans-serif;
+  font-family: Montserrat, sans-serif;
 }
 .header__nav {
   position: absolute;
@@ -198,7 +219,8 @@ li {
   font-size: 120px;
   font-weight: normal;
 }
-.header__title__sub {
+.header__title__sub {  
+  font-size: 30px;
   word-spacing: 4px;
 }
 .header__title__sub::before,
@@ -222,7 +244,7 @@ li {
 }
 .concept__image {
   width: 100%;
-  height: 400px;
+  height: 450px;
   object-fit: cover;
 }
 
@@ -266,59 +288,59 @@ li {
 }
 
 /* * * * * * * * *
-* Florist
+* users
 * * * * * * * * */
-.florist {
+.users {
   width: 100%;
   padding-top: 80px;
   background: linear-gradient(#ededed 60%, #fff 40%);
 }
-.florist__persons {
+.users__voices {
   display: flex;
   justify-content: space-between;
 }
-.florist__person {
+.users__voice {
   width: 300px;
   padding-bottom: 40px;
   text-align: left;
   line-height: 1.8;
   font-size: 0;
 }
-.florist__person__image {
-  width: 100%;
+.users__voice__image {
+  width: 80%;
   margin-bottom: 12px;
 }
-.florist__person__name {
+.users__voice__name {
   font-size: 24px;
 }
-.florist__person__introduce {
+.users__voice__introduce {
   font-size: 16px;
   letter-spacing: 1.5px;
 }
 
 /* * * * * * * * *
-* Shop information
+* company information
 * * * * * * * * */
-.shopInformation {
+.company {
   width: 100%;
   padding: 80px 0 120px;
 }
-.shopInformation__contents {
+.company__contents {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.shopInformation__image {
+.company__image {
   width: 50%;
 }
-.shopInformation__table {
+.company__table {
   width: 45%;
   border-spacing: 16px;
   text-align: left;
   letter-spacing: 1.5px;
   line-height: 2;
 }
-.shopInformation__table__heading {
+.company__table__heading {
   width: 25%;
   border-right: 1px solid #a0a0a0;
 }
@@ -411,7 +433,7 @@ li {
   .header {
     height: 355px;
     padding-top: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../css/images/lesson-img/header.png) 50%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../css/images/lesson-img/lesson-img1.jpg) 50%;
     background-size: cover;
   }
   .header__nav {
@@ -425,6 +447,9 @@ li {
   .header__title {
     padding-top: 120px;
     font-size: 64px;
+  }
+  .header__title__sub {
+    font-size: 18px;
   }
 
   /* * * * * * * * *
@@ -523,55 +548,58 @@ li {
   }
 
   /* * * * * * * * *
-  * Florist
+  * users
   * * * * * * * * */
-  .florist {
+  .users {
     padding: 40px 0;
     background: #ededed 55%;
   }
-  .florist__persons__wrapper {
+  .users__voices__wrapper {
     overflow-x: auto;
     overflow-y: visible;
     -webkit-overflow-scrolling: touch;
   }
-  .florist__persons__wrapper::-webkit-scrollbar {
+  .users__voices__wrapper::-webkit-scrollbar {
     width: 4px;
     height: 4px;
     border-radius: 8px;
   }
-  .florist__persons__wrapper::-webkit-scrollbar-thumb {
+  .users__voices__wrapper::-webkit-scrollbar-thumb {
     background: rgba(0,0,0,.15);
     border-radius: 8px;
   }
-  .florist__persons__wrapper::-webkit-scrollbar-track {
+  .users__voices__wrapper::-webkit-scrollbar-track {
     background: rgba(0,0,0,.1);
     border-radius: 8px;
   }
-  .florist__persons {
+  .users__voices {
     display: inline-flex;
   }
-  .florist__person {
+  .users__voice {
     width: 80vw;
   }
-  .florist__person:not(:last-of-type) {
+  .users__voice:not(:last-of-type) {
     margin-right: 24px;
   }
-  .florist__person__image {
-    width: 100%;
+  .users__voice__image {
+    width: 70%;
     margin-bottom: 0;
+  }
+  .users__voice__introduce {
+    width: 80%;
   }
 
   /* * * * * * * * *
-  * Shop information
+  * company information
   * * * * * * * * */
-  .shopInformation {
+  .company {
     padding: 40px 0;
   }
-  .shopInformation__contents {
+  .company__contents {
     display: block;
   }
-  .shopInformation__image,
-  .shopInformation__table {
+  .company__image,
+  .company__table {
     width: 100%;
   }
 

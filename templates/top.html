@@ -13,26 +13,31 @@
 </head>
 
 <body>
-    <h1>prog</h1>
+
+    <!-- ハンバーガーメニュー -->
+    <header class="header">
+        <div class="header__nav">
+          <div class="u-content-wrapper header__nav__wrapper">
+            <div class="header__nav__logo">Prog</div>
+            <div class="hamburger-menu">
+              <span class="hamburger-menu__line"></span>
+              <span class="hamburger-menu__line--dummy"></span>
+            </div>
+          </div>
+          <ul class="header-menu">
+            <li class="header__menu__item"><a href="/login">Login</a></li>
+            <li class="header__menu__item"><a href="/profile">My Page</a></li>
+            <li class="header__menu__item"><a href="/map">Lesson</a></li>
+            <li class="header__menu__item"><a href="/logout">Logout</a></li>
+            <li class="header__menu__item"><a href="/lesson">Progとは</a></li>
+          </ul>
+        </div>
+      </header>
+    <!-- ハンバーガーメニュー -->
 
 
     {% block content %}
-    <!-- ハンバーガーメニュー -->
-    <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      
-      <nav class="globalMenuSp">
-          <ul>
-              <li><a href="/point">Profile</a></li>
-              <li><a href="/map">Map</a></li>
-              <li><a href="/use">How to Use</a></li>
-              <li><a href="#">Sign Out</a></li>
-          </ul>
-      </nav>
-    <!-- ハンバーガーメニュー -->
+    
 
 
     {% endblock %}

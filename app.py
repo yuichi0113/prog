@@ -14,7 +14,6 @@ app.secret_key = "prog"
 def template():
     return render_template("login.html")
 
-
 @app.route("/map")
 def map():
     # flasktest.dbに接続します
@@ -53,7 +52,7 @@ def lesson():
 @app.route("/regist", methods=["GET"])
 def regist_get():
     if 'id' in session:
-        return redirect("/map")
+        return redirect("/point")
     else:
         return render_template("regist.html")
 
@@ -72,7 +71,7 @@ def regist_post():
 @app.route("/login", methods=["GET"])
 def login_get():
     if 'id' in session:
-        return redirect("/map")
+        return redirect("/point")
     else:
         return render_template("login.html")
 
@@ -89,30 +88,29 @@ def login_post():
         return render_template("login.html")
     else:
         session['id'] = id[0]
-    return redirect("/map")
+    return redirect("/point")
 
 
 @app.route("/logout")
 def logout():
     session.pop('id', None)
     return redirect("/login")
-
     
-# @app.route("/point")
-# def point():
-#     return render_template("point.html")
-
 @app.route("/point")
 def point():
-    if 'user_id' in session:
-        conn = sqlite3.connect('prog.db')
-        c = conn.cursor()
-        c.execute("select user_name , point, Lv, from user where id = ?", (id,))
-        user_status = c.fetchone()
-        c.close()
-        return render_template("point.html", user_status=user_status)
-    else:
-        return redirect("/login")
+    return render_template("point.html")
+
+# @app.route("/point")
+# def point():
+#     if 'user_id' in session:
+#         conn = sqlite3.connect('prog.db')
+#         c = conn.cursor()
+#         c.execute("select user_name , point, Lv, from user where id = ?", (id,))
+#         user_status = c.fetchone()
+#         c.close()
+#         return render_template("point.html", user_status=user_status)
+#     else:
+#         return redirect("/login")
 
 @app.errorhandler(404)
 def notfound(code):
