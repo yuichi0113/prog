@@ -1,203 +1,185 @@
-.hamburger {
-<<<<<<< HEAD
-    display : block;
-    position: fixed;
-    z-index : 3;
-    right : 30px;
-    top   : 15px;
-    width : 42px;
-    height: 42px;
-    cursor: pointer;
-    text-align: center;
+.u-content-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+a {
+  color: #2b2b2b;
+  text-decoration: none;
+}
+.header {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+}
+.header__nav {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 64px;
+}
+.header__nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__nav__logo {
+  font-size: 36px;
+}
+.hamburger-menu {
+  position: relative;
+  width: 32px;
+  height: 64px;
+  cursor: pointer;
+}
+.hamburger-menu__line,
+.hamburger-menu__line::before,
+.hamburger-menu__line::after,
+.hamburger-menu__line--dummy {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: #fff;
+}
+.hamburger-menu__line::before,
+.hamburger-menu__line::after {
+  content: '';
+}
+
+.hamburger-menu__line,
+.hamburger-menu__line--dummy {
+  top: 50%;
+  transition: all .3s;
+}
+
+.active .hamburger-menu__line {
+  transform: rotate(-45deg);
+}
+.active .hamburger-menu__line--dummy {
+  transform: rotate(45deg);
+}
+
+.hamburger-menu__line::before {
+  top: calc(50% - 8px);
+  transition: all .3s;
+}
+.active .hamburger-menu__line::before {
+  top: 50%;
+  opacity: 0;
+}
+
+.hamburger-menu__line::after {
+  top: calc(50% + 8px);
+  transition: all .3s;
+}
+.active .hamburger-menu__line::after {
+  top: 50%;
+  opacity: 0;
+}
+
+.header-menu {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .9);
+  transition: all .3s;
+}
+.header__menu__item {
+  padding: 0;
+  line-height: 11vh;
+  text-align: center;
+  font-size: 18px;
+  border-top: 1px solid #ccc;
+}
+.header__menu__item:last-of-type {
+  border-bottom: 1px solid #ccc;
+}
+.height-change {
+  height: calc(100vh - 64px);
+}
+
+.header__title {
+  padding-top: 240px;
+  font-size: 120px;
+  font-weight: normal;
+}
+.header__title__sub {  
+  font-size: 30px;
+  word-spacing: 4px;
+}
+.header__title__sub::before,
+.header__title__sub::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 2px;
+  margin: 0 8px;
+  background: #fff;
+  vertical-align: middle;
+}
+
+/* * * * * * * * *
+* レスポンシブ対応
+* * * * * * * * */
+@media (max-width: 670px) {
+  body {
+    font-size: 14px;
   }
-  .hamburger span {
-    display : block;
+
+  /* * * * * * * * *
+  * utility
+  * * * * * * * * */
+  .u-content-wrapper {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+  }
+  .u-heading {
+    font-size: 28px;
+  }
+  .u-heading::after {
+    content: '';
     position: absolute;
-    width   : 30px;
-    height  : 2px ;
-    left    : 6px;
-    background : #fff;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition   : 0.3s ease-in-out;
-    transition        : 0.3s ease-in-out;
-  }
-  .hamburger span:nth-child(1) {
-    top: 10px;
-  }
-  .hamburger span:nth-child(2) {
-    top: 20px;
-  }
-  .hamburger span:nth-child(3) {
-    top: 30px;
+    bottom: 0;
+    left: 50%;
+    width: 40px;
+    height: 1px;
+    background: #2b2b2b;
+    transform: translateX(-50%);
   }
   
-  /* ナビ開いてる時のボタン */
-  .hamburger.active span:nth-child(1) {
-    top : 16px;
-    left: 6px;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform   : rotate(-45deg);
-    transform        : rotate(-45deg);
+  /* * * * * * * * *
+  * header
+  * * * * * * * * */
+  .header {
+    height: 50px;
+    padding-top: 0;
+    background-size: cover;
   }
-  
-  .hamburger.active span:nth-child(2),
-  .hamburger.active span:nth-child(3) {
-    top: 16px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform   : rotate(45deg);
-    transform        : rotate(45deg);
-  }
-  
-  nav.globalMenuSp {
+  .header__nav {
     position: fixed;
-    z-index : 2;
-    top  : 0;
-    left : 0;
-=======
-    display: block;
-    position: fixed;
-    z-index: 3;
-    right: 30px;
-    top: 15px;
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    text-align: center;
-}
-
-.hamburger span {
-    display: block;
-    position: absolute;
-    width: 30px;
-    height: 2px;
-    left: 6px;
-    background: #fff;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-}
-
-.hamburger span:nth-child(1) {
-    top: 10px;
-}
-
-.hamburger span:nth-child(2) {
-    top: 20px;
-}
-
-.hamburger span:nth-child(3) {
-    top: 30px;
-}
-
-/* ナビ開いてる時のボタン */
-.hamburger.active span:nth-child(1) {
-    top: 16px;
-    left: 6px;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-
-.hamburger.active span:nth-child(2),
-.hamburger.active span:nth-child(3) {
-    top: 16px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-nav.globalMenuSp {
-    position: fixed;
-    z-index: 2;
     top: 0;
-    left: 0;
->>>>>>> ed42e232f7554250a94d8f239e23469bf6b40977
-    color: #000;
-    background: #fff;
-    text-align: center;
-    transform: translateY(-100%);
-    transition: all 0.6s;
-    width: 100%;
-<<<<<<< HEAD
+    z-index: 100;
   }
-  
-  nav.globalMenuSp ul {
-    background:#1161ed;
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
+  .header__nav__logo {
+    font-size: 24px;
   }
-  
-  nav.globalMenuSp ul li {
-=======
-}
-
-nav.globalMenuSp ul {
-    background: #1161ed;
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-}
-
-nav.globalMenuSp ul li {
->>>>>>> ed42e232f7554250a94d8f239e23469bf6b40977
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
-    border-bottom: 1px solid #fff;
-<<<<<<< HEAD
+  .header__title {
+    padding-top: 120px;
+    font-size: 64px;
   }
-  nav.globalMenuSp ul li:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
+  .header__title__sub {
+    font-size: 18px;
   }
-  nav.globalMenuSp ul li:hover{
-    background :#fff;
-  }
-  
-  nav.globalMenuSp ul li a {
-    display: block;
-    color: #fff;
-    padding: 1em 0;
-    text-decoration :none;
-    letter-spacing: 1px;
-  }
-  nav.globalMenuSp ul li a:hover{
-    color: #1161ed;
-  }
-  
-  
-  /* このクラスを、jQueryで付与・削除する */
-  nav.globalMenuSp.active {
-    transform: translateY(0%);
-  }
-=======
-}
-
-nav.globalMenuSp ul li:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-nav.globalMenuSp ul li:hover {
-    background: #fff;
-}
-
-nav.globalMenuSp ul li a {
-    display: block;
-    color: #fff;
-    padding: 1em 0;
-    text-decoration: none;
-    letter-spacing: 1px;
-}
-
-nav.globalMenuSp ul li a:hover {
-    color: #1161ed;
-}
-
-
-/* このクラスを、jQueryで付与・削除する */
-nav.globalMenuSp.active {
-    transform: translateY(0%);
-}
->>>>>>> ed42e232f7554250a94d8f239e23469bf6b40977
