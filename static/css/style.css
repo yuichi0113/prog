@@ -1,74 +1,159 @@
-.hamburger {
-    display: block;
-    position: fixed;
-    z-index: 3;
-    right: 30px;
-    top: 15px;
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    text-align: center;
+.u-content-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+a {
+  color: #2b2b2b;
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+.header {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+}
+.header__nav {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 64px;
+}
+.header__nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__nav__logo {
+  font-size: 36px;
+}
+.hamburger-menu {
+  position: relative;
+  width: 32px;
+  height: 64px;
+  cursor: pointer;
+}
+.hamburger-menu__line,
+.hamburger-menu__line::before,
+.hamburger-menu__line::after,
+.hamburger-menu__line--dummy {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: #fff;
+}
+.hamburger-menu__line::before,
+.hamburger-menu__line::after {
+  content: '';
 }
 
-.hamburger span {
-    display: block;
-    position: absolute;
-    width: 30px;
-    height: 2px;
-    left: 6px;
-    background: #fff;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
+.hamburger-menu__line,
+.hamburger-menu__line--dummy {
+  top: 50%;
+  transition: all .3s;
 }
 
-.hamburger span:nth-child(1) {
-    top: 10px;
+.active .hamburger-menu__line {
+  transform: rotate(-45deg);
+}
+.active .hamburger-menu__line--dummy {
+  transform: rotate(45deg);
 }
 
-.hamburger span:nth-child(2) {
-    top: 20px;
+.hamburger-menu__line::before {
+  top: calc(50% - 8px);
+  transition: all .3s;
+}
+.active .hamburger-menu__line::before {
+  top: 50%;
+  opacity: 0;
 }
 
-.hamburger span:nth-child(3) {
-    top: 30px;
+.hamburger-menu__line::after {
+  top: calc(50% + 8px);
+  transition: all .3s;
+}
+.active .hamburger-menu__line::after {
+  top: 50%;
+  opacity: 0;
 }
 
-/* ナビ開いてる時のボタン */
-.hamburger.active span:nth-child(1) {
-    top: 16px;
-    left: 6px;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+.header-menu {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .9);
+  transition: all .3s;
+}
+.header__menu__item {
+  padding: 0;
+  line-height: 11vh;
+  text-align: center;
+  font-size: 18px;
+  border-top: 1px solid #ccc;
+}
+.header__menu__item:last-of-type {
+  border-bottom: 1px solid #ccc;
+}
+.height-change {
+  height: calc(100vh - 64px);
 }
 
-.hamburger.active span:nth-child(2),
-.hamburger.active span:nth-child(3) {
-    top: 16px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    transform: rotate(45deg);
+.header__title {
+  padding-top: 240px;
+  font-size: 120px;
+  font-weight: normal;
+}
+.header__title__sub {  
+  font-size: 30px;
+  word-spacing: 4px;
+}
+.header__title__sub::before,
+.header__title__sub::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 2px;
+  margin: 0 8px;
+  background: #fff;
+  vertical-align: middle;
 }
 
-nav.globalMenuSp {
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    display: block;
-    position: fixed;
-    z-index: 3;
-    right: 30px;
-    top: 15px;
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    text-align: center;
-}
+/* * * * * * * * *
+* レスポンシブ対応
+* * * * * * * * */
+@media (max-width: 670px) {
+  body {
+    font-size: 14px;
+  }
 
-.hamburger span {
-    display: block;
+  /* * * * * * * * *
+  * utility
+  * * * * * * * * */
+  .u-content-wrapper {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+  }
+  .u-heading {
+    font-size: 28px;
+  }
+  .u-heading::after {
+    content: '';
     position: absolute;
     width: 30px;
     height: 2px;
