@@ -50,6 +50,7 @@ def lesson():
 
 
 @app.route("/regist", methods=["GET"])
+
 def regist_get():
     if 'id' in session:
         return redirect("/point")
