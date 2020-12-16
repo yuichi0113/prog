@@ -6,6 +6,9 @@ a {
   color: #2b2b2b;
   text-decoration: none;
 }
+li {
+  list-style-type: none;
+}
 .header {
   position: relative;
   width: 100%;
