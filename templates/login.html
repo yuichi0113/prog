@@ -1,19 +1,16 @@
 {% extends 'top.html' %}
 {% block content %}
 
-
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/login.css') }}">
-<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
 <div class="start">
   <p><img src="../static/css/images/prog3.png" alt="PROG"></p>
 </div>
 
 <div class="login">
-  <h2 class="active"> sign in </h2>
-  <h2 class="nonactive"><a href="/touroku"> sign up </a></h2>
-  <form>
-    <input type="text" class="text" name="username">
+  <h2 class="active"> Login </h2>
+  <form action="/login" method="POST">
+    <input type="text" class="text" name="name">
     <span>username</span><br><br>
 
     <input type="password" class="text" name="password">
@@ -23,11 +20,11 @@
 
     <label for="checkbox-1-1">Keep me Signed in</label>
     
-    <button class="signin"> Sign In </button>
+    <input type="submit" name="save" value="Login" class="signin">
 
     <hr>
     
-    <p class="forget"><a href="#">Forgot Password?</a></p>
+    <p class="forget"><h2 class="nonactive"><a href="/regist"> Create Account </a></h2></p>
   </form>
 </div>
 
