@@ -20,7 +20,7 @@ def map():
     # flasktest.dbに接続します
     conn = sqlite3.connect("prog.db")
     c = conn.cursor()
-    sql = "SELECT list, time, category_id  FROM road_maps ;"
+    sql = "SELECT list, time, category_id  FROM maps ;"
     # sql文を実行
     c.execute(sql)
     # 取ってきた内容を変数に格納する
