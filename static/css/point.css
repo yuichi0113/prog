@@ -9,7 +9,6 @@ body {
     width: 405px;
     margin: auto;
     padding: 50px 20px 50px 20px;
-    background-color: #6e6d6d;
     background-size: 50% auto;
     box-shadow: 0px 30px 60px -5px #000;
     /* background: url(https://picsum.photos/id/1004/5616/3744) no-repeat center center #505050; */
@@ -72,14 +71,12 @@ body {
 
 
 .next-task {
-    background-color: rebeccapurple;
     height: 180px;
     width: 365px;
     float: left;
 }
 
 .point-task {
-    background-color: red;
     height: 180px;
     width: 365px;
     float: left;
