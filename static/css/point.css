@@ -6,7 +6,7 @@ body {
 .status {
     position: relative;
     height: 560px;
-    width: 405px;
+    width: 500px;
     margin: auto;
     padding: 50px 20px 50px 20px;
     background-size: 50% auto;
@@ -17,7 +17,7 @@ body {
 
 .user-profile {
     height: 180px;
-    width: 405px;
+    width: 480px;
     background-color: gold;
     display: inline-flex;
     /* align-items: center; */
@@ -72,13 +72,13 @@ body {
 
 .next-task {
     height: 180px;
-    width: 365px;
+    width: 480px;
     float: left;
 }
 
 .point-task {
     height: 180px;
-    width: 365px;
+    width: 480px;
     float: left;
 }
 
