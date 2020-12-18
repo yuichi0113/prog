@@ -51,8 +51,7 @@
 <div class="status">
     <div class="user-profile">
         <div class="user-image">
-            <img src="../static/css/images/lesson-img/user1.jpg" class="image" width="120"
-                height="120">
+            <img src="../static/css/images/lesson-img/user1.jpg" class="image" width="120" height="120">
             <!-- <p>FOX</p> -->
         </div>
 
@@ -66,11 +65,25 @@
 
 
     <div class="next-task">
-        <p>ww</p>
+        <div class="content">
+            <h3>{{category_info[1][0]}}</h3>
+            <nav id="example-one">
+                <a href="#">{{map_info[0][0]}}<button class="button">完了</button></a>
+                <a href="#">{{map_info[1][0]}}</a>
+                <a href="#">{{map_info[2][0]}}</a>
+            </nav>
+        </div>
     </div>
 
     <div class="point-task">
-        <p>aaaaaa</p>
+        <div class="content">
+            <h3>{{category_info[2][0]}}</h3>
+            <nav id="example-two">
+                <a href="#">{{map_info[3][0]}}<button class="button">完了</button></a>
+                <a href="#">{{map_info[4][0]}}</a>
+                <a href="#">{{map_info[5][0]}}</a>
+            </nav>
+        </div>
     </div>
 
 </div>

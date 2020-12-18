@@ -115,7 +115,27 @@ def point():
         c.execute("select * from users where id = ?", (id,))
         user_status = c.fetchone()
         c.close()
-        return render_template("point.html", user_status=user_status)
+
+        conn = sqlite3.connect("prog.db")
+        c = conn.cursor()
+        sql = "SELECT list, time, category_id  FROM maps ;"
+        # sql文を実行
+        c.execute(sql)
+        # 取ってきた内容を変数に格納する
+        map_info = c.fetchall()
+        # データベースの接続終了
+        c.close()
+
+        # flasktest.dbに接続します
+        conn = sqlite3.connect("prog.db")
+        c = conn.cursor()
+        sql = "SELECT category FROM categories"
+        c.execute(sql)
+        category_info = c.fetchall()
+        # データベースの接続終了
+        c.close()
+
+        return render_template("point.html", user_status=user_status, map_info=map_info, category_info=category_info)
     else:
         return redirect("/login")
 
