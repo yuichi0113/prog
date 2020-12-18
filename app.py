@@ -112,7 +112,7 @@ def point():
         id = session['id']
         conn = sqlite3.connect('prog.db')
         c = conn.cursor()
-        c.execute("select user_name, point, Lv from users where id = ?", (id,))
+        c.execute("select * from users where id = ?", (id,))
         user_status = c.fetchone()
         c.close()
         return render_template("point.html", user_status=user_status)
