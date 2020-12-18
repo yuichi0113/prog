@@ -351,7 +351,7 @@ li {
 .contactUs {
   width: 100%;
   padding: 80px 0;
-  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('../css/images/lesson-img/contact_us.png');
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('../css/images/lesson-img/lesson-img3.jpg');
   background-size: cover;
 }
 .btn__contact {
