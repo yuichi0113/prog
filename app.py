@@ -65,7 +65,7 @@ def regist_post():
     print(name)
     conn = sqlite3.connect('prog.db')
     c = conn.cursor()
-    c.execute("INSERT INTO users VALUES(null,?,?)", (name, password))
+    c.execute("INSERT INTO users VALUES(null,?,?,null,null)", (name, password))
     conn.commit()
     c.close()
     return redirect("/login")
